@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerry Ouma | Web Designer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #f5f5f5;
+  background: url('wood.jpg') no-repeat center center/cover;
+}
+
+/* DARK OVERLAY */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  z-index: -1;
+}
+
+/* NAVBAR */
+header {
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+  position:sticky;
+  top:0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(15px);
+}
+header h3 { font-weight:700; letter-spacing:1px; }
+header a { text-decoration:none; margin-left:25px; color:#fff; font-weight:500; transition:0.3s; }
+header a:hover { color:#ff914d; }
+
+/* HERO */
+.hero { padding:160px 20px; text-align:center; }
+.hero h1 { font-size:65px; margin-bottom:20px; }
+.hero span { color:#ff914d; }
+.hero p { font-size:20px; margin-bottom:30px; color:#ccc; }
+
+/* BUTTONS */
+.btn {
+  padding:14px 30px; margin:8px; border-radius:30px; border:none; cursor:pointer; font-weight:600; transition:0.3s;
+}
+.btn-primary {
+  background:linear-gradient(135deg,#ff914d,#ff6a00);
+  color:#fff;
+}
+.btn-primary:hover { transform:translateY(-3px); box-shadow:0 10px 20px rgba(255,145,77,0.4); }
+.btn-secondary { background:transparent; border:2px solid #ff914d; color:#ff914d; }
+.btn-secondary:hover { background:#ff914d; color:#fff; }
+
+/* SECTIONS */
+section { padding:100px 20px; max-width:1100px; margin:auto; }
+h2 { font-size:38px; margin-bottom:50px; text-align:center; }
+
+/* PROJECT CARDS */
+.project { position:relative; margin-bottom:60px; border-radius:20px; overflow:hidden; }
+.img-box { width:100%; height:400px; overflow:hidden; border-radius:20px; position:relative; }
+.project-img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease; }
+
+/* Overlay & Animation */
+.project-overlay {
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.6); /* slightly transparent to see image underneath */
+  color:#fff;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  opacity:0; transition: opacity 0.4s ease;
+  text-align:center; padding:20px;
+}
+.project-overlay h3 {
+  font-size:24px; margin-bottom:10px;
+  transform: translateY(20px); opacity:0;
+  transition: all 0.5s ease;
+}
+.project-overlay p {
+  font-size:16px; margin-bottom:15px; line-height:1.5; max-width:350px;
+  transform: translateY(20px); opacity:0;
+  transition: all 0.5s ease 0.1s;
+}
+.project-overlay a.btn {
+  transform: translateY(20px); opacity:0;
+  transition: all 0.5s ease 0.2s;
+}
+
+.project:hover .project-img { transform:scale(1.1); }
+.project:hover .project-overlay { opacity:1; }
+.project:hover .project-overlay h3,
+.project:hover .project-overlay p,
+.project:hover .project-overlay a.btn {
+  transform: translateY(0); opacity:1;
+}
+
+/* SERVICES */
+.services { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
+.services div {
+  background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);
+  padding:25px; border-radius:15px; transition:0.3s; border:1px solid rgba(255,255,255,0.1);
+}
+.services div:hover { transform:translateY(-5px); border-color:#ff914d; }
+
+/* ABOUT */
+#about { text-align:center; max-width:700px; }
+
+/* CONTACT */
+.contact { text-align:center; }
+
+/* FOOTER */
+footer { text-align:center; padding:30px; color:#aaa; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h3>GERRY OUMA</h3>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Hi, I'm <span>Gerry Ouma</span></h1>
+  <p>I design and build premium, modern websites that help businesses grow online. My focus is on creating visually stunning, fast, and user-friendly websites that convert visitors into loyal customers. Whether it’s a business site, portfolio, or e-commerce platform, I deliver results-driven designs tailored to your brand.</p>
+  <button class="btn btn-primary" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">View Work</button>
+  <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Me</button>
+</section>
+<section id="work">
+  <h2>Selected Work</h2>
+
+  <!-- PROJECT 1 -->
+  <div class="project">
+    <div class="img-box">
+      <img src="nvp 1.jfif" class="project-img">
+      <div class="project-overlay">
+        <h3>NVP Gardens</h3>
+        <p>A landscaping business website showcasing services and attracting new clients.</p>
+        <a href="https://nvpgardensnakuru.netlify.app/" target="_blank" class="btn btn-primary">View Live Site</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 2 -->
+  <div class="project">
+    <div class="img-box">
+      <img src="happy 1.jfif" class="project-img">
+      <div class="project-overlay">
+        <h3>Happy Valley Restaurant</h3>
+        <p>A modern restaurant website highlighting menu and online reservations.</p>
+        <a href="https://happyvalleyrestaurant.netlify.app/" target="_blank" class="btn btn-primary">View Live Site</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 3 -->
+<div class="project">
+  <div class="img-box">
+    <img src="under.png" class="project-img">
+    <div class="project-overlay">
+      <h3>NovaWear Store</h3>
+      <p>An upcoming e-commerce website designed to turn visitors into customers. <strong>Currently under construction.</strong></p>
+      <a href="#" class="btn btn-secondary" style="cursor:not-allowed;">Under Construction</a>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<section id="services">
+  <h2>Services</h2>
+  <div class="services">
+    <div><h3>Business Websites</h3><p>Premium websites tailored to your brand.</p></div>
+    <div><h3>E-commerce</h3><p>Online stores designed to convert visitors into buyers.</p></div>
+    <div><h3>Redesign</h3><p>Transform your outdated site into something modern.</p></div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I'm Gerry Ouma, a web designer focused on building modern, high-performing websites that deliver real business results. I specialize in creating visually stunning, responsive, and user-friendly websites that help brands stand out online.</p>
+  
+  <p>With a passion for clean design and intuitive user experiences, I craft websites that are not only beautiful but also functional. From business websites to e-commerce platforms, I aim to turn ideas into digital experiences that engage visitors and drive growth.</p>
+  
+  <p>Every project I take on is approached with attention to detail, performance optimization, and a results-driven mindset. My goal is to ensure that every website I build reflects the client’s brand identity and achieves measurable success.</p>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Let’s Work Together</h2>
+  <p>Ready to build something great?</p>
+  
+  <a href="https://wa.me/254792946075" target="_blank" class="btn btn-primary" style="display:inline-block; margin-top:20px;">
+    Get in Touch
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 Gerry Ouma</p>
+</footer>
+
+</body>
+</html>
